@@ -25,6 +25,7 @@ function getArrayParams(arr) {
 
 // Задание 2
 // Задание 2
+//pflfybt 3
 function worker(arr) {
   let sum = 0;
 
