@@ -71,17 +71,15 @@ class Library {
         this.books = []
     }
     addBook(object) {
-        if(object.state > 30)
+        if(object.state > 30) {
         this.books.push(object)
+        }
     }
     findBookBy(type, value) {
-        let book = this.books.find(el => el[type] == value)  
-        if(book == undefined) return null                  
-        else return book      
+        return this.books.find((item) => item[type] === value) || null;    
     }
     giveBookByName(bookName) {
-        let book = this.books.splice(this.books.findIndex(el => el.name == bookName),1) 
-        if(book[0] == undefined) return null               
-        else return book[0]
+        let bookIndex = this.books.findIndex((item) => item.name === bookName);
+        return bookIndex === -1 ? null : this.books.splice(bookIndex, 1)[0];
     }
 }
